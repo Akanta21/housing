@@ -1,7 +1,7 @@
 import DS from 'ember-data'
 
 export default DS.Model.extend({
-  occupied: DS.attr(),
-  homes: DS.belongsTo('home'),
-  sectionGrids: DS.belongsTo('sectionGrid')
+  occupied: DS.attr()
+  // home: DS.belongsTo('home'),
+  // section: DS.belongsTo('section')
 })
