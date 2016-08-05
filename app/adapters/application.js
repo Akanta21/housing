@@ -1,5 +1,5 @@
-import DS from 'ember-data'
-import Ember from 'ember'
+// import DS from 'ember-data'
+// import Ember from 'ember'
 import ActiveModelAdapter from 'active-model-adapter'
 
 // export default DS.RESTAdapter.extend({
@@ -10,5 +10,6 @@ import ActiveModelAdapter from 'active-model-adapter'
 // })
 
 export default ActiveModelAdapter.extend({
-  host: 'https://project-4.herokuapp.com'
+  // host: 'https://project-4.herokuapp.com'
+  host: 'http://localhost:3000'
 })

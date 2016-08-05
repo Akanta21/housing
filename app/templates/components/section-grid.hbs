@@ -1,12 +1,5 @@
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
-{{section-grid-row}}
+{{#each-in numOfTimes as |time|}}
+{{section-grid-row sections=sections}}
+{{else}}
+<h4>Height is Empty</h4>
+{{/each-in}}
