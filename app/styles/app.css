@@ -1,0 +1,15 @@
+.grid_whole {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid_indiv {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
