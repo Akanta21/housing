@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   classNames: ['grid_row'],
 
   numOfTimes: Ember.computed('sections', function () {
-    console.log('section-grid.js')
+    // console.log('section-grid.js')
     var array = []
     var section = this.get('sections')
     var width = section.get('width')

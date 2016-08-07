@@ -2,11 +2,13 @@ import DS from 'ember-data'
 import Ember from 'ember'
 
 export default DS.Model.extend({
-  height: DS.attr(),
-  width: DS.attr(),
+  occupied: DS.attr(),
+
   elementId: Ember.computed('id', function () {
-    return 'grid-' + this.get('id')
+    // return this.get('id')
+    return 'hi'
   })
 
-  // section_grids: DS.hasMany('section_grid')
+// home: DS.belongsTo('home'),
+// section: DS.belongsTo('section')
 })

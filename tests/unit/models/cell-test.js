@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('section-grid', 'Unit | Model | section grid', {
+moduleForModel('cell', 'Unit | Model | cell', {
   // Specify the other units that are required for this test.
   needs: []
 });
