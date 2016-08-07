@@ -5,6 +5,12 @@ const Router = Ember.Router.extend({
   location: config.locationType
 })
 
-Router.map(function () {})
+Router.map(function () {
+  this.route('sections', function () {
+    this.route('show', {
+      path: ':section_id'
+    })
+  })
+})
 
 export default Router

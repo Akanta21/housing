@@ -10,6 +10,6 @@ import ActiveModelAdapter from 'active-model-adapter'
 // })
 
 export default ActiveModelAdapter.extend({
-  // host: 'https://project-4.herokuapp.com'
-  host: 'http://localhost:3000'
+  host: 'https://project-4.herokuapp.com'
+  // host: 'http://localhost:3000'
 })
