@@ -1,5 +1,5 @@
 {{#each getHeight as |height index|}}
-{{section-grid-row sections=sections cellsArray=(filterArray sections index)}}
+{{section-grid-row sections=sections cells=cells cellsArray=(filterArray sections index)}}
 {{else}}
 <h4>Height is Empty</h4>
 {{/each}}

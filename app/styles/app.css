@@ -13,3 +13,7 @@
   width: 50px;
   border: 1px solid black;
 }
+
+.colored {
+  background-color: red;
+}
