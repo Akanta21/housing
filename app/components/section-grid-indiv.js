@@ -1,25 +1,5 @@
 import Ember from 'ember'
 
 export default Ember.Component.extend({
-  classNames: ['grid_indiv'],
-
-  // init: Ember.computed('section_grids', function () {
-  //   this._super()
-  //   console.log(this.get('section_grids'))
-  // })
-
-  setElementId: Ember.on('init', function () {
-    console.log(this.getProperties('elementId'))
-    // this.set('elementId', 'indiv-' + index)
-  })
-
-  // didInsertElement: Ember.computed('cells', function () {
-  //   this._super()
-  //   console.log(this.getProperties('elementId'))
-  // })
-
-  // setElementId: Ember.computed('section_grids', function () {
-  //   var index = this.get('section_grids')
-  //   console.lo
-  // })
+  classNames: ['grid_indiv']
 })

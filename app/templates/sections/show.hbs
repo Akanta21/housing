@@ -3,11 +3,3 @@
 <p>{{model.sections.height}} X {{model.sections.width}}</p>
 
 {{section-grid sections=model.sections cellsArray=model.sections.cells id=model.sections.elementId}}
-
-<p style="color: red;">
-  Cells:
-  {{#each model.sections.cells as |cell|}}
-  <h4>Cell ID: {{cell.id}}</h4>
-  <p>{{cell.occupied}}</p>
-  {{/each}}
-</p>
