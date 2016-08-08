@@ -14,6 +14,11 @@ export default Ember.Component.extend({
       array.push('x')
     }
     return array
-  })
+  }),
+
+  filterArray: function (arr) {
+    console.log('here')
+    console.log(arr)
+  }
 
 })

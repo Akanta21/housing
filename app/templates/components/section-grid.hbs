@@ -1,5 +1,5 @@
-{{#each numOfTimes as |time|}}
-{{section-grid-row sections=sections grids=grids}}
+{{#each numOfTimes as |time index|}}
+{{section-grid-row sections=sections cellsArray=(filterArray sections index)}}
 {{else}}
 <h4>Height is Empty</h4>
 {{/each}}
