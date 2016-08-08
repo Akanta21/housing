@@ -1,10 +1,7 @@
 <h2>Section Index Page</h2>
 {{#each model.sections as |section|}}
+{{#link-to 'sections.show' section.id}}
 <h4>Section ID: {{section.id}}</h4>
 <p>{{section.height}} X {{section.width}}</p>
-{{/each}}
-
-{{#each model.cells as |cell|}}
-<h4>Cell ID: {{cell.id}}</h4>
-<p>{{cell.occupied}}</p>
+{{/link-to}}
 {{/each}}

@@ -3,7 +3,7 @@ import Ember from 'ember'
 export default Ember.Component.extend({
   classNames: ['grid_whole'],
 
-  numOfTimes: Ember.computed('sections', function () {
+  getHeight: Ember.computed('sections', function () {
     console.log('section-grid.js')
     var array = []
     var section = this.get('sections')
@@ -14,6 +14,11 @@ export default Ember.Component.extend({
       array.push('x')
     }
     return array
-  })
+  }),
+
+  willRender: function () {
+    console.log('here')
+    // window.location.reload(true)
+  }
 
 })
