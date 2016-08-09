@@ -1,0 +1,26 @@
+<h1>Sign up</h1>
+<form {{action "register" on="submit"}}>
+  {{#if errorMessage}}
+    <p>
+      <strong>Error:</strong>
+      <code>{{errorMessage}}</code>
+    </p>
+  {{/if}}
+  <div>
+    <label for="name">Name</label>
+    {{input value=name placeholder="Enter name"}}
+  </div>
+  <div>
+    <label for="email">Email</label>
+    {{input value=email placeholder="Enter email"}}
+  </div>
+  <div>
+    <label for="password">Password</label>
+    {{input value=password placeholder="Password" type="password"}}
+  </div>
+  <div>
+    <label for="password">Password Confirmation</label>
+    {{input value=password_confirmation placeholder="Password Confirmation" type="password"}}
+  </div>
+  <button type="submit">Sign up</button>
+</form>

@@ -11,6 +11,8 @@ Router.map(function () {
       path: ':section_id'
     })
   })
+  this.route('login')
+  this.route('signup')
 })
 
 export default Router
