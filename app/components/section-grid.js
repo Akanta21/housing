@@ -14,11 +14,5 @@ export default Ember.Component.extend({
       array.push('x')
     }
     return array
-  }),
-
-  willRender: function () {
-    console.log('here')
-    // window.location.reload(true)
-  }
-
+  })
 })

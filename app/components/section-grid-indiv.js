@@ -4,23 +4,11 @@ export default Ember.Component.extend({
   classNames: ['grid_indiv'],
   attributeBindings: ['style'],
 
-  occupiedCellId: Ember.computed('cell', function () {
+  style: Ember.computed('cell', 'cells', function () {
     if (this.get('cell').occupied) {
-      return this.get('cell').id
-    }
-  }),
-
-  cellColor: Ember.computed('cells', function () {
-    var occupied = this.get('occupiedCellId')
-    if (occupied) {
-      var filterCell = this.get('cells').filter(cell => { return parseInt(cell.get('id'), 10) === occupied })
-      return filterCell[0].get('home').color
-    }
-  }),
-
-  style: Ember.computed('cell', function () {
-    if (this.get('cell').occupied) {
-      return Ember.String.htmlSafe('background-color: ' + this.get('cellColor'))
+      var occupiedCellId = this.get('cell').id
+      var filterCell = this.get('cells').filter(cell => { return parseInt(cell.get('id'), 10) === occupiedCellId })
+      return Ember.String.htmlSafe('background-color: ' + filterCell[0].get('home').color)
     }
     else return null
   })
