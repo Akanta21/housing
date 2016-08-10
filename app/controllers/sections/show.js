@@ -25,6 +25,7 @@ export default Ember.Controller.extend({
       } else {
         console.log('empty')
         this.set('optionToOccupy', true)
+        this.set('optionToVacate', false)
         var emptyCellId = cell.id
         var filterEmptyCell = this.get('model.cells').filter(cell => { return parseInt(cell.get('id'), 10) === emptyCellId })
         this.set('emptyCell', filterEmptyCell[0])

@@ -11,12 +11,15 @@ Router.map(function () {
       path: ':section_id'
     })
   })
+
   this.route('login')
   this.route('signup')
 
-  this.route('homes', function() {
-    this.route('new');
-  });
+  this.route('homes', function () {
+    this.route('new')
+  })
+
+  this.route('dashboard')
 })
 
 export default Router

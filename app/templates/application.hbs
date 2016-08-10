@@ -4,6 +4,9 @@
   {{/link-to}}
   {{#if session.isAuthenticated}}
     <span>{{sessionAccount.currentUser.email}}</span>
+    {{#link-to "dashboard"}}
+      Dashboard
+    {{/link-to}}
     <button {{action "logout"}}>Logout</button>
   {{else}}
     {{#link-to "login"}}

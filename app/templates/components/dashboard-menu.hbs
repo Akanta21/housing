@@ -1,0 +1,37 @@
+{{#unless homeExist}}
+<button type="button" name="button" data-toggle="modal" data-target="#create-home-form">New Home</button>
+{{/unless}}
+<button type="button" name="button">Expand Home</button>
+<button type="button" name="button">Create/Suggest Public Space</button>
+
+ <!-- Modal -->
+ <div id="create-home-form" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Create New Home</h4>
+       </div>
+
+       <div class="modal-body">
+         <form {{action 'create' on='submit'}}>
+           <div>
+             <label>Color</label>
+             {{input type='text' value=color}}
+           </div>
+           <div>
+             <input type='submit' value='Save'/>
+             <!-- <button {{action 'cancel'}}>Cancel</button> -->
+           </div>
+         </form>
+       </div>
+
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+
+   </div>
+ </div>
