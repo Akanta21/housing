@@ -15,7 +15,7 @@ export default Ember.Route.extend({
     createHome () {
       var newHome = this.get('currentModel')
       newHome.save()
-      // this.transitionTo('sections')
+      this.transitionTo('sections')
     }
   }
 })
