@@ -2,8 +2,17 @@
 <h4>Section ID: {{model.sections.id}}</h4>
 <p>{{model.sections.height}} X {{model.sections.width}}</p>
 
-{{section-grid save=(action 'saveResult') homes=model.homes sections=model.sections cells=model.cells cellsArray=model.sections.cells id=model.sections.elementId}}
+{{section-grid save=(action 'checkCell') homes=model.homes sections=model.sections cells=model.cells cellsArray=model.sections.cells id=model.sections.elementId}}
 
+{{#if optionToOccupy}}
+<h1>Add To Home? (Form to PATCH cell, add home_id to cell)</h1>
+<button {{action 'updateCell' emptyCell}}type="button">Add to Home</button>
+{{else}}
 {{#each residents as |resident|}}
 <h1>{{resident.name}}</h1>
 {{/each}}
+{{/if}}
+
+{{#if optionToVacate}}
+<h3>Vacate?</h3>
+{{/if}}
