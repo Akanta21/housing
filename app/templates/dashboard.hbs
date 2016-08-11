@@ -1,3 +1,5 @@
-<h3>WELCOME {{sessionAccount.currentUser.email}}</h3>
-{{dashboard-menu currentUser=model.currentUser create=(action 'createHome')}}
-{{dashboard-home-info homes=model.homes currentUser=model.currentUser delete=(action 'deleteHome') add=(action 'addUser')}}
+<div style="text-align: center">
+  <h3>{{sessionAccount.currentUser.name}}'s Home</h3>
+  {{dashboard-menu currentUser=model.currentUser create=(action 'createHome')}}
+  {{dashboard-home-info homes=model.homes currentUser=model.currentUser delete=(action 'deleteHome') add=(action 'addUser')}}
+</div>

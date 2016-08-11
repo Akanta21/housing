@@ -14,7 +14,9 @@ export default Ember.Controller.extend({
     deleteHome (home) {
       console.log('deleteAction Controller')
       console.log(home)
-      home.destroyRecord()
+      home.destroyRecord().then(function () {
+        window.location.reload(true)
+      })
     },
 
     addUser (userEmail) {
@@ -25,6 +27,7 @@ export default Ember.Controller.extend({
       this.store.findRecord('user', userId).then(function (user) {
         console.log(user)
         user.save()
+        window.location.reload(true)
       })
     }
   }
