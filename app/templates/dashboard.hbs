@@ -1,5 +1,6 @@
-<div style="text-align: center">
+<div class="row" style="text-align: center; margin: 20px;">
   <h3>{{sessionAccount.currentUser.name}}'s Home</h3>
-  {{dashboard-menu currentUser=model.currentUser create=(action 'createHome')}}
-  {{dashboard-home-info homes=model.homes currentUser=model.currentUser delete=(action 'deleteHome') add=(action 'addUser')}}
 </div>
+
+{{dashboard-menu currentUser=model.currentUser create=(action 'createHome')}}
+{{dashboard-home-info homes=model.homes currentUser=model.currentUser delete=(action 'deleteHome') add=(action 'addUser')}}

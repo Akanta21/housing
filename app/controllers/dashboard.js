@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     createHome (params) {
       var newHome = this.store.createRecord('home', params)
       newHome.save()
-      this.transitionToRoute('sections')
+      window.location.reload(true)
     },
 
     deleteHome (home) {

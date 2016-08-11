@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   color: '',
   home: '',
   homeExist: '',
+  sizeArray: [],
 
   init () {
     this._super()
@@ -14,6 +15,11 @@ export default Ember.Component.extend({
       var filterHome = this.homes.filter(home => { return parseInt(home.get('id'), 10) === this.currentUser.get('home').id })
       this.set('home', filterHome[0])
       this.set('users', filterHome[0].get('users'))
+      var array = []
+      for (var i = 0; i < parseInt(filterHome[0].get('size'), 10); i++) {
+        array.push('x')
+      }
+      this.set('sizeArray', array)
     }
     else this.set('homeExist', false)
   },
