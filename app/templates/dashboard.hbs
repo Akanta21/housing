@@ -1,2 +1,3 @@
 <h3>WELCOME {{sessionAccount.currentUser.email}}</h3>
 {{dashboard-menu currentUser=model.currentUser create=(action 'createHome')}}
+{{dashboard-home-info homes=model.homes currentUser=model.currentUser delete=(action 'deleteHome') add=(action 'addUser')}}

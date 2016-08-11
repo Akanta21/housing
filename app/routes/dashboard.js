@@ -4,7 +4,8 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model () {
     return Ember.RSVP.hash({
-      currentUser: this.store.queryRecord('user', { me: true })
+      currentUser: this.store.queryRecord('user', { me: true }),
+      homes: this.store.findAll('home')
     })
   }
 })

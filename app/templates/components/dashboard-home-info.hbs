@@ -1,0 +1,42 @@
+<h3>Home Info</h3>
+{{#if homeExist}}
+{{color}}
+{{#each users as |user|}}
+<h4>{{user.name}}</h4>
+{{/each}}
+<button {{action 'delete'}} type="button">Delete Home</button>
+<button type="button" data-toggle="modal" data-target="#add-user-form">Add User</button>
+<!-- Modal -->
+<div id="add-user-form" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add User to Home</h4>
+      </div>
+
+      <div class="modal-body">
+        <form {{action 'add' on='submit'}}>
+          <div>
+            <label>User's Email</label>
+            {{input type='text' value=email}}
+          </div>
+          <div>
+            <input type='submit' value='Save'/>
+            <!-- <button {{action 'cancel'}}>Cancel</button> -->
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+{{else}}
+YOU'RE HOMELESS
+{{/if}}
