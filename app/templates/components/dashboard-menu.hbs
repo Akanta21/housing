@@ -1,7 +1,9 @@
 {{#unless homeExist}}
 <button type="button" name="button" data-toggle="modal" data-target="#create-home-form">New Home</button>
 {{/unless}}
-<button type="button" name="button">Expand Home</button>
+{{#if homeExist}}
+<button type="button" name="button">{{#link-to 'sections'}}Expand Home{{/link-to}}</button>
+{{/if}}
 <button type="button" name="button">Create/Suggest Public Space</button>
 
  <!-- Modal -->

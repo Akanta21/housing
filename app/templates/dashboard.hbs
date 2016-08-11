@@ -1,1 +1,2 @@
-{{dashboard-menu create=(action 'createHome')}}
+<h3>WELCOME {{sessionAccount.currentUser.email}}</h3>
+{{dashboard-menu currentUser=model.currentUser create=(action 'createHome')}}
