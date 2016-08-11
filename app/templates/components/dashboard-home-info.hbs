@@ -1,10 +1,28 @@
-<h3>Home Info</h3>
 {{#if homeExist}}
-{{color}}
-{{#each users as |user|}}
-<h4>{{user.name}}</h4>
-{{/each}}
+<div class="col-lg-6">
+  <div style="width: 500px;">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+    <style type="text/css">
+    .st0{stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+    </style>
+    <g>
+      <path fill={{color}} class="st0" d="M400.4,217.1l-78.1-104.6l-170,53.8c-0.3,0.3-0.6,0.5-0.9,0.8l71.7,106.5L400.4,217.1
+      C400.4,217.1,400.4,217.1,400.4,217.1z"/>
+      <line class="st0" x1="151.2" y1="166.6" x2="83.9" y2="239.2"/>
+      <path fill={{color}} class="st0" d="M221,359.2"/>
+      <path fill={{color}} class="st0" d="M221,273.5"/>
+      <path fill={{color}} class="st0" d="M223.5,367.5l177-59v-85.1c-0.1-0.4,0-3.2,0-3.2c-1.8-1.2-0.7,0-2-1.7l-177.5,57v91.1
+      C221.9,367,222.7,367.3,223.5,367.5z"/>
+      <path class="st0" d="M83.9,239.2c0,29.9,0,52.9,0,82.8"/>
+      <line class="st0" x1="223.5" y1="367.5" x2="83.9" y2="322"/>
+      <path class="st0" d="M83.9,239.2"/>
+      <path class="st0" d="M221,273.5"/>
+    </g>
+  </svg>
+</div>
 <button {{action 'delete'}} type="button">Delete Home</button>
+<!-- Add User Form -->
 <button type="button" data-toggle="modal" data-target="#add-user-form">Add User</button>
 <!-- Modal -->
 <div id="add-user-form" class="modal fade" role="dialog">
@@ -34,9 +52,18 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
   </div>
+
 </div>
+</div>
+
+<div class="col-lg-6">
+  {{#each users as |user|}}
+  <img style="width: 100px;"src="user.svg" />
+  <h4>{{user.name}}</h4>
+  {{/each}}
+</div>
+
 {{else}}
-YOU'RE HOMELESS
+  YOU'RE HOMELESS
 {{/if}}

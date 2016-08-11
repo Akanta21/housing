@@ -18,7 +18,12 @@ export default Ember.Controller.extend({
     },
 
     addUser (userEmail) {
-      this.store.queryRecord('user', { email: userEmail }).then(function (user) {
+      var filterUser = this.get('model.users').filter(function (user) {
+        return user.get('email') === userEmail
+      })
+      var userId = filterUser[0].get('id')
+      this.store.findRecord('user', userId).then(function (user) {
+        console.log(user)
         user.save()
       })
     }
