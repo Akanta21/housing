@@ -1,18 +1,58 @@
-<h1>Individual Section</h1>
-<h4>Section ID: {{model.sections.id}}</h4>
-<p>{{model.sections.height}} X {{model.sections.width}}</p>
+<div class="row" style="margin: 50px;">
+  <div class="col-lg-6">
+    {{section-grid save=(action 'checkCell') homes=model.homes sections=model.sections cells=model.cells cellsArray=model.sections.cells id=model.sections.elementId}}
+  </div>
 
-{{section-grid save=(action 'checkCell') homes=model.homes sections=model.sections cells=model.cells cellsArray=model.sections.cells id=model.sections.elementId}}
+  <div class="col-lg-5">
+    <div class="row">
+      <h1>Housing Block {{model.sections.id}}</h1>
+      <h4>{{model.sections.height}} Floors | {{model.sections.width}} Width</h4>
+    </div>
 
-{{#if optionToOccupy}}
-<h1>Add To Home? (Form to PATCH cell, add home_id to cell)</h1>
-<button {{action 'updateCell' emptyCell}}type="button">Add to Home</button>
-{{else}}
-{{#each residents as |resident|}}
-<h1>{{resident.name}}</h1>
-{{/each}}
-{{/if}}
+    <div class="row" style="width: 100%;">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 480 321" style="enable-background:new 0 0 480 321;" xml:space="preserve">
+      <style type="text/css">
+        .st0{stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+        .st1{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+      </style>
+      <g>
+        <path fill={{color}} class="st0" d="M400.4,139.1L322.3,34.5l-170,53.8c-0.3,0.3-0.8,0-1.1,0.3L221,197.5L400.4,139.1L400.4,139.1z"/>
+        <line class="st1" x1="151.2" y1="88.6" x2="83.9" y2="161.2"/>
+        <path fill={{color}} class="st0" d="M221,281.2"/>
+        <path fill={{color}} class="st0" d="M221,195.5"/>
+        <path fill={{color}} class="st0" d="M223.5,289.5l177-59v-85.1c-0.1-0.4,0-3.2,0-3.2c-1.8-1.2-0.7,0-2-1.7l-177.5,57v91.1
+          C221.9,289,222.7,289.3,223.5,289.5z"/>
+        <path fill={{color}} class="st0" d="M83.9,161.2c0,29.9,0,52.9,0,82.8"/>
+        <line class="st1" x1="223.5" y1="289.5" x2="83.9" y2="244"/>
+        <path fill={{color}} class="st0" d="M83.9,161.2"/>
+        <path fill={{color}} class="st0" d="M221,195.5"/>
+      </g>
+      </svg>
+    </div>
 
-{{#if optionToVacate}}
-<h3>Vacate?</h3>
-{{/if}}
+    {{#if optionToOccupy}}
+    <div class="row" style="text-align: center;">
+      <button {{action 'updateCell' emptyCell}}type="button" class="ember-view md-warn md-raised md-default-theme md-button">Add to Home</button>
+      <h2>Empty</h2>
+    </div>
+
+    {{else}}
+    <div class="row" style="text-align: center;">
+      {{#if optionToVacate}}
+      <button type="button" class="ember-view md-warn md-raised md-default-theme md-button">Vacate</button>
+      {{/if}}
+    </div>
+
+    <div class="row" style="display: flex; flex-wrap: wrap;">
+      {{#each residents as |resident|}}
+      <div style="width: 100px; height: 100px; text-align: center;">
+        <img src="user.svg" />
+        <h4>{{resident.name}}</h4>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+  </div>
+</div>

@@ -1,7 +1,11 @@
-<h2>Section Index Page</h2>
-{{#each model.sections as |section|}}
-{{#link-to 'sections.show' section.id}}
-<h4>Section ID: {{section.id}}</h4>
-<p>{{section.height}} X {{section.width}}</p>
-{{/link-to}}
-{{/each}}
+<h2>Choose a housing block</h2>
+<div style="display: flex; flex-wrap: wrap;">
+  {{#each model.sections as |section|}}
+  <div style="width: 360px; text-align: center;">
+    {{#link-to 'sections.show' section.id}}
+      <img src="housing.svg" />
+      <h4>Housing Block {{section.id}}</h4>
+    {{/link-to}}
+  </div>
+  {{/each}}
+</div>
